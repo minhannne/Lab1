@@ -1,0 +1,23 @@
+/* SUB-TASK T-03C: Empty & Error States */
+
+.empty-state,
+.error-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-state h2,
+.error-state h2 {
+  margin-bottom: 8px;
+}
+
+.empty-state p,
+.error-state p {
+  margin-bottom: 20px;
+}
+
+.empty-state button,
+.error-state button {
+  padding: 8px 16px;
+  cursor: pointer;
+}

@@ -8,42 +8,38 @@
 
   <link rel="stylesheet" href="skeleton.css">
   <link rel="stylesheet" href="data.css">
+  <link rel="stylesheet" href="empty.css">
 </head>
 
 <body>
 
   <main>
 
-    <h1>Live Data</h1>
+    <h1>Resilient Component</h1>
 
-    <div class="metadata">
-      <span class="badge">Status: Live</span>
-      <span class="badge">Items: 4</span>
-    </div>
+    <section class="empty-state" aria-labelledby="empty-title">
+      <h2 id="empty-title">No items found</h2>
 
-    <div class="data-grid">
+      <p>
+        There are currently no items to display.
+      </p>
 
-      <div class="data-card">
-        <h3>Component A</h3>
-        <p>Status: Active</p>
-      </div>
+      <button type="button">
+        Retry
+      </button>
+    </section>
 
-      <div class="data-card">
-        <h3>Component B</h3>
-        <p>Status: Active</p>
-      </div>
+    <section class="error-state" aria-labelledby="error-title">
+      <h2 id="error-title">Something went wrong</h2>
 
-      <div class="data-card">
-        <h3>Component C</h3>
-        <p>Status: Pending</p>
-      </div>
+      <p>
+        We couldn't load the data. Please try again.
+      </p>
 
-      <div class="data-card">
-        <h3>Component D</h3>
-        <p>Status: Active</p>
-      </div>
-
-    </div>
+      <button type="button">
+        Retry
+      </button>
+    </section>
 
   </main>
 
