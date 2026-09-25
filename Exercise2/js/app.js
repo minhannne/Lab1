@@ -59,7 +59,7 @@ function saveTheme(theme) {
   try {
     localStorage.setItem(THEME_STORAGE_KEY, theme);
   } catch (error) {
-    // Theme still works for the current page session.
+   
   }
 }
 
@@ -89,3 +89,57 @@ function initializeTheme() {
 }
 
 initializeTheme();
+
+
+
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
+
+const formState = {
+  name: "",
+  email: "",
+  message: "",
+  status: "idle"
+};
+
+
+function updateFormStatus(message) {
+  if (formStatus) {
+    formStatus.textContent = message;
+  }
+}
+
+
+function handleContactSubmit(event) {
+  event.preventDefault();
+
+  if (!contactForm) {
+    return;
+  }
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    return;
+  }
+
+  const formData = new FormData(contactForm);
+
+  formState.name = formData.get("name").trim();
+  formState.email = formData.get("email").trim();
+  formState.message = formData.get("message").trim();
+  formState.status = "submitted";
+
+  updateFormStatus(
+    `Thank you, ${formState.name}! Your message has been validated locally.`
+  );
+
+  contactForm.reset();
+
+  formState.name = "";
+  formState.email = "";
+  formState.message = "";
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", handleContactSubmit);
+}
