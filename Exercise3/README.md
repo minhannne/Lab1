@@ -39,3 +39,4 @@ Empty -> Loading
 ## Git Commits
 
 Each state should be committed separately.
+https://chatgpt.com/share/6ab6a6bd-9cd4-83ec-b3f0-41cdc3d8e7a6
